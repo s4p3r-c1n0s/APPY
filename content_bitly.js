@@ -83,9 +83,9 @@ createDom : function() {
    }; // HelloWorld End
 
   config.api.callbacks({
-    init : HelloWorld.init,
-    options : HelloWorld.options,
-    contextAction : HelloWorld.contextAction
+    init : VED.init,
+    options : VED.options,
+    contextAction : VED.contextAction
   });
 
 })({
