@@ -8,6 +8,8 @@
 
     options : function() {
       config.api.log("Options!");
+	CustomRss.createDom();
+    },
 /* $j(document).ready(function () {
        // debugger
        $j(":wijmo-wijdialog").wijdialog("destroy").remove();
@@ -72,7 +74,7 @@ createDom : function() {
        }});
        } catch(e) {}
        }
-       },
+       
 
     contextAction : function() {
       config.api.log("Context action invoked");
