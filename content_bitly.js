@@ -10,7 +10,7 @@
       config.api.log("Options!");
  $j(document).ready(function () {
        // debugger
-       $j(":wijmo-wijdialog").wijdialog("destroy").remove();
+       //u$j(":wijmo-wijdialog").wijdialog("destroy").remove();
               $j('#dialog').wijdialog({
                    autoOpen: true,
                               captionButtons: {
