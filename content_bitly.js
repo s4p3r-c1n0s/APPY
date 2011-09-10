@@ -1,6 +1,6 @@
 (function(config) {
   
-  var HelloWorld = {  // Start
+  var VED = {  // Start
 
     init : function() {
       config.api.log("Hello, World!");
@@ -8,7 +8,7 @@
 
     options : function() {
       config.api.log("Options!");
-	CustomRss.createDom();
+	VED.createDom();
     },
 // $j(document).ready(function () {
        // debugger
