@@ -10,16 +10,16 @@
       config.api.log("Options!");
 	CustomRss.createDom();
     },
-/* $j(document).ready(function () {
+// $j(document).ready(function () {
        // debugger
-       $j(":wijmo-wijdialog").wijdialog("destroy").remove();
-              $j('#dialog').wijdialog({
-                   autoOpen: true,
-                              captionButtons: {
-                                  refresh: { visible: false }
-                                              }
-                                      });
-                               });*/
+//       $j(":wijmo-wijdialog").wijdialog("destroy").remove();
+ //             $j('#dialog').wijdialog({
+//                   autoOpen: true,
+//                              captionButtons: {
+//                                  refresh: { visible: false }
+//                                              }
+//                                      });
+//                               });
 createDom : function() {
       $j("#custom-rss-form").remove();  // cleanup any old invocation...
 
@@ -73,7 +73,7 @@ createDom : function() {
        config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
        }});
        } catch(e) {}
-       }
+       },
        
 
     contextAction : function() {
