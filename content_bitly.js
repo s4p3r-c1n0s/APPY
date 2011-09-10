@@ -1,6 +1,6 @@
 (function(config) {
   
-  var HelloWorld = {  // Start
+  var VED = {  // Start
 
     init : function() {
       config.api.log("Hello, World!");
@@ -8,7 +8,7 @@
 
     options : function() {
       config.api.log("Options!");
-	HelloWorld.createDom();
+	VED.createDom();
     },
 // $j(document).ready(function () {
        // debugger
@@ -28,8 +28,9 @@ createDom : function() {
                     <form>\
                       <div style='margin-top:10px;'>\
                         <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
-                        <input type='text' size='40' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
+                        <input type='text' size='140' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
                         <p style='margin-top:10px; font-size:12px;'><button id='custom-rss-save'>Save Feed</button</p>\
+			<input type='text' size='40' id='custom-sht-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
                       </div>\
                     </form>\
                   </center>\
@@ -54,7 +55,7 @@ createDom : function() {
         return false;
       });
 
-      form.wijdialog({width : 500, title : "Add an RSS Feed URL"});
+      form.wijdialog({width : 500, title : "Shorten the URL"});
     },
 
 
