@@ -30,7 +30,7 @@ createDom : function() {
                         <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
                         <input type='text' size='140' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
                         <p style='margin-top:10px; font-size:12px;'><button id='custom-rss-save'>Save Feed</button</p>\
-			<input type='text' size='40' id='custom-sht-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
+			//<input type='text' size='40' id='custom-sht-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
                       </div>\
                     </form>\
                   </center>\
@@ -46,10 +46,10 @@ createDom : function() {
       })
       .click(function(event) {
         var feedUrl = $j("#custom-rss-url").val();
-        if(CustomRss.isValidFeedUrl(feedUrl) == true)
+        if(VED.isValidFeedUrl(feedUrl) == true)
         {
           config.api.setData("feedUrl", feedUrl);
-          CustomRss.watchFeed(feedUrl);
+          VED.watchFeed(feedUrl);
         }
         $j("#custom-rss-form").wijdialog("close");
         return false;
