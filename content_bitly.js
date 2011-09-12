@@ -68,11 +68,13 @@ createDom : function() {
                        // creates the IJFeedWatcherFactory object.
        // Url can be escaped or unescaped feedUrl
        watchFeed : function(url) {
-       try {
-       new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
-       config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
-       }});
-       } catch(e) {}
+	var umang ="http"+url+"doca";
+	config.api.log(umang);
+     //try {
+     //new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
+     //config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
+     //}});
+     //} catch(e) {}
        },
        
 
