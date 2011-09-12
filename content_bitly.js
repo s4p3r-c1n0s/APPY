@@ -70,10 +70,10 @@ createDom : function() {
        watchFeed : function(url) {
 	var id="umangjeet",key="R_0aa77d04e6f747473c71020ed1c24237";
 	var bitly_const ="\
-		http://api.bitly.com/v3/expand?\
-		login="+id+"\
-		&apiKey="+key+"\
-		&shortUrl="+url;
+http://api.bitly.com/v3/expand?\
+login="+id+"\
+&apiKey="+key+"\
+&shortUrl="+url;
 	var xhr = new XMLHttpRequest();
 	//xhr.open("GET", bitly_const);
 	config.api.log(bitly_const);
