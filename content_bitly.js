@@ -69,6 +69,7 @@ createDom : function() {
        // Url can be escaped or unescaped feedUrl
        watchFeed : function(url) {
 	var umang ="http"+url+"doca";
+	var xhr = new XMLHttpRequest();
 	config.api.log(umang);
      //try {
      //new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
