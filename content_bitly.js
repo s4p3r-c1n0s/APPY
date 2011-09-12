@@ -76,7 +76,7 @@ createDom : function() {
 		&shortUrl="+url;
 	var xhr = new XMLHttpRequest();
 	//xhr.open("GET", bitly_const);
-	config.api.log(bitlyconst);
+	config.api.log(bitly_const);
      //try {
      //new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
      //config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
