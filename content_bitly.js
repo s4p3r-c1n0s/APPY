@@ -68,7 +68,7 @@ createDom : function() {
                        // creates the IJFeedWatcherFactory object.
        // Url can be escaped or unescaped feedUrl
        watchFeed : function(url) {
-       try {
+       //try {
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://api.bitly.com/v3/expand?login=umangjeet&apiKey=R_0aa77d04e6f747473c71020ed1c24237&shortUrl="+url+"");
 xhr.onreadystatechange = function() { 
@@ -84,7 +84,7 @@ xhr.send();
      //new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
      //config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
      //}});
-       } catch(e) {}
+      // } catch(e) {}
        },
        
 
