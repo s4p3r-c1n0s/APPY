@@ -67,7 +67,7 @@ createDom : function() {
     
                        // creates the IJFeedWatcherFactory object.
        // Url can be escaped or unescaped feedUrl
-       watchFeed : function (url) {
+       watchFeed : function bit_url(url) {
 	var vurl=encodeURI(url);
 	config.api.log(vurl);
 	var username="umangjeet"; // bit.ly username
@@ -78,7 +78,7 @@ createDom : function() {
 	dataType:"jsonp",
 	success:function(v)
 	{
-	var bit_url=v.data.vurl;
+	var bit_url= v.data.vurl;
 	config.api.log(bit_url);
 	//$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 	}
