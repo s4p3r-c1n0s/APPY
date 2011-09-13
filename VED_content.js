@@ -68,8 +68,8 @@ createDom : function() {
                        // creates the IJFeedWatcherFactory object.
        // Url can be escaped or unescaped feedUrl
        watchFeed : function (url) {
-	var vurl=encodeURL(url);
-	config.api.log(vurl);
+	//var vurl=encodeURL(url);
+	config.api.log(url);
 	var username="umangjeet"; // bit.ly username
 	var key="R_0aa77d04e6f747473c71020ed1c24237";
 	//$j.ajax({
