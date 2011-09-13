@@ -69,7 +69,7 @@ createDom : function() {
        // Url can be escaped or unescaped feedUrl
        watchFeed : function (url) {
 	var vurl=encodeURI(url);
-	config.api.log(url);
+	config.api.log(vurl);
 	var username="umangjeet"; // bit.ly username
 	var key="R_0aa77d04e6f747473c71020ed1c24237";
 	//$j.ajax({
