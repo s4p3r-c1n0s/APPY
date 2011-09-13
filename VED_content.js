@@ -26,7 +26,7 @@ createDom : function() {
       var form = $j("<div/>", {id : "custom-rss-form"}).html(
                   "<center>\
 <form>\
-<div id = "custom-rss-short" style='margin-top:10px;'>\
+<div  style='margin-top:10px;'>\
 <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 <input type='text' size='40' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 <p style='margin-top:10px; font-size:12px;'><button id='custom-rss-save'>Save Feed</button</p>\
@@ -79,7 +79,7 @@ createDom : function() {
 	success:function(v)
 	{
 	var bit_url=v.data.vurl;
-	$j("#custom-rss-short).html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
+	$j("#custom-rss-form.html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 	}
 	});
 	}
