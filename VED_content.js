@@ -78,6 +78,7 @@ createDom : function() {
 	success:function(v)
 	{
 	var bit_url=v.data.vurl;
+	config.api.log(bit_url);
 	$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 	}
 	});
