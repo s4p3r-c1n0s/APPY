@@ -49,9 +49,9 @@ createDom : function() {
         {
           config.api.setData("feedUrl", feedUrl);
           VED.watchFeed(feedUrl);
-	  $j("#custom-rss-form").wijdialog("refresh");
+	  //$j("#custom-rss-form").wijdialog("refresh");
         }
-        $j("#custom-rss-form").wijdialog("close");
+        $j("#custom-rss-form").wijdialog("refresh");
         return false;
       });
 
