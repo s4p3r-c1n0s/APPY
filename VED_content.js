@@ -30,8 +30,8 @@ createDom : function() {
 <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 <input type='text' size='40' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 <p style='margin-top:10px; font-size:12px;'><button id='custom-rss-save'>Save Feed</button</p>\
-<div id="custom-rss-short"></div>\
 </div>\
+div id="custom-rss-short"></div>\
 </form>\
 </center>\
 "
