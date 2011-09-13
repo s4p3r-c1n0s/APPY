@@ -31,7 +31,6 @@ createDom : function() {
 <input type='text' size='40' id='custom-rss-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 <p style='margin-top:10px; font-size:12px;'><button id='custom-rss-save'>Save Feed</button</p>\
 </div>\
-//<div id="custom-rss-short"></div>\
 </form>\
 </center>\
 "
