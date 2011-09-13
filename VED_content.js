@@ -80,7 +80,7 @@ createDom : function() {
 	{
 	var bit_url= v.data.url;
 	config.api.log(bit_url);
-	//$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
+	$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 	}
 	});
 	//try {
