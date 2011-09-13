@@ -81,7 +81,6 @@ createDom : function() {
 	$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 	}
 	});
-	}
 	//try {
      //new IJFeedWatcherFactory(unescape(url), {image : "http://cs.adomado.com/custom_rss/rss.png", timeoutMinutes : 5, callback : function(entry) {
      //config.api.createPanelNotification({image : "http://cs.adomado.com/custom_rss/rss.png", text : entry.title, url : entry.link});
