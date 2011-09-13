@@ -78,7 +78,7 @@ createDom : function() {
 	{
 	var VED_url= vd.data.url;
 	config.api.log(VED_url);
-	$j("#custom-rss-form").append('<a href="'+VED_url+'" target="_blank">'+VED_url+'</a>');
+	$j("p#custom-rss-form").append('<a href="'+VED_url+'" target="_blank">'+VED_url+'</a>');
 	}
 	});
 	//try {
