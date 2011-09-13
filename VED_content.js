@@ -67,20 +67,17 @@ createDom : function() {
     
                        // creates the IJFeedWatcherFactory object.
        // Url can be escaped or unescaped feedUrl
-       watchFeed : function bit_url(url) {
-	var vurl=encodeURI(url);
-	config.api.log(vurl);
-	var username="umangjeet"; // bit.ly username
-	var key="R_0aa77d04e6f747473c71020ed1c24237";
+       watchFeed : function VED_url(url) {
+	var id="umangjeet", apik="R_0aa77d04e6f747473c71020ed1c24237", vurl=encodeURI(url);
 	$j.ajax({
 	url:"http://api.bit.ly/v3/shorten",
-	data:{longUrl:vurl,apiKey:key,login:username},
+	data:{longUrl:vurl,apiKey:apik,login:id},
 	dataType:"jsonp",
-	success:function(v)
+	success:function(vd)
 	{
-	var bit_url= v.data.url;
-	config.api.log(bit_url);
-	$j("#custom-rss-form").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
+	var VED_url= vd.data.url;
+	config.api.log(VED_url);
+	$j("#custom-rss-form").html('<a href="'+VED_url+'" target="_blank">'+VED_url+'</a>');
 	}
 	});
 	//try {
