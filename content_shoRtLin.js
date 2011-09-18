@@ -19,15 +19,15 @@ createDom : function() {
 		<form>\
 		<div id='shoRtLin-tabs'>\
 			<ul>\
-				<li><a href="#shoRtLin-slf">shoRtLin-slf</a>\
-				<li><a href="#shoRtLin-odr">shoRtLin-odr</a></li>\
+				<li><a href="#shoRtLinslf">shoRtLinslf</a></li>\
+				<li><a href="#shoRtLinodr">shoRtLinodr</a></li>\
 			</ul>\
-			<div id='shoRtLin-slf' style='margin-top:10px;'>\
+			<div id='shoRtLinslf' style='margin-top:10px;'>\
 				<span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 				<input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 				<p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
 			</div>\
-			<div id='shoRtLin-odr' style='margin-top:10px;'>\
+			<div id='shoRtLinodr' style='margin-top:10px;'>\
                 	        <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 	                        <input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 	                        <p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
