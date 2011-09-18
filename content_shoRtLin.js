@@ -36,7 +36,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-url > ul").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
+      $j("#shoRtLin-form > ul").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
