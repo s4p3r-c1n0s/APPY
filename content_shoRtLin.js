@@ -19,7 +19,7 @@ createDom : function() {
 		<form>\
 		<div id='shoRtLin-tabs'>\
 			<ul>\
-				<li><a href="#shoRtLin-slf">shoRtLin-slf</a></li>\
+				<li><a href="#shoRtLin-slf">shoRtLin-slf</a>\
 				<li><a href="#shoRtLin-odr">shoRtLin-odr</a></li>\
 			</ul>\
 			<div id='shoRtLin-slf' style='margin-top:10px;'>\
