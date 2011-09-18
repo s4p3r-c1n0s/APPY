@@ -18,16 +18,16 @@ createDom : function() {
                   "<center>\
 		<form>\
 		<div id='shoRtLin-tabs'>\
-			<ul>
-				<li class='shoRtLin-slf'>shoRtLin-slf</li>
-				<li class='shoRtLin-odr'>shoRtLin-odr</li>
-			</ul>
-			<div class='shoRtLin-slf' style='margin-top:10px;'>\
+			<ul>\
+				<li><a href="#shoRtLin-slf">shoRtLin-slf</a></li>\
+				<li><a href="#shoRtLin-odr">shoRtLin-odr</a></li>\
+			</ul>\
+			<div id='shoRtLin-slf' style='margin-top:10px;'>\
 				<span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 				<input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 				<p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
 			</div>\
-			<div class='shoRtLin-odr' style='margin-top:10px;'>\
+			<div id='shoRtLin-odr' style='margin-top:10px;'>\
                 	        <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 	                        <input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 	                        <p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
@@ -38,7 +38,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tabs").tabs("div");
+      $j("#shoRtLin-tabs > ul").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
