@@ -35,13 +35,13 @@ createDom : function() {
 	                        <p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short That</button</p>\
 				</form>\
                         </div>\
-		<!--</div>-->\
+		</div>\
 		</center>"
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
      // $j("#shoRtLin-form").wijtabs();
-     	$j("#shoRtLin-form").wijtabs();
+     	$j("#shoRtLin-tab").wijtabs();
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
