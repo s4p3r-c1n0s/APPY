@@ -56,7 +56,7 @@ createDom : function() {
         $j("#shoRtLin-form").wijdialog("refresh");
         return false;
       });
-	form.wijtabs({width : 500});
+	form.wijtabs({width : 500,showOption: { blind: true, fade: true, duration: 200}});
 	//form.dialog('option', 'dialogClass', 'alert');
       //form.wijdialog({width : 500/*, title : "Shorten the URL"*/});
     },
