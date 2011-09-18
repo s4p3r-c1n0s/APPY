@@ -16,6 +16,9 @@ createDom : function() {
 
       var form = $j("<div/>", {id : "shoRtLin-form"}).html(
                   "<center>\
+		<div id="panel" style='width:100px;height:100px;background:red;'>\
+			<a id="close" style='display:block;float:right; width:30px; height:29px;background:url(http://digitalsbykobke.com/images/close.png) no-repeat center center;' href="#"></a>\
+		</div>\
 		<div id='shoRtLin-tab' style='position:fixed; width:500px; left: 400px; top: 150px'>\
 			<ul>\
 				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a></li>\
@@ -53,7 +56,7 @@ createDom : function() {
           config.api.setData("feedUrl", feedUrl);
           shoRtLin.shortURL(feedUrl);
         }
-        $j("#shoRtLin-form").fadeOut('slow');
+        //$j("#shoRtLin-form").fadeOut('slow');
         return false;
       });
 	//form.wijtabs({width : 500});
