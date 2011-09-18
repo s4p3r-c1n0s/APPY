@@ -40,7 +40,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tab").wijtabs({collapsible: true,hideOption: { blind: true, fade: true, duration: 2000}});
+      $j("#shoRtLin-tab").wijtabs({collapsible: true});
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
@@ -53,7 +53,7 @@ createDom : function() {
           config.api.setData("feedUrl", feedUrl);
           shoRtLin.shortURL(feedUrl);
         }
-        $j("#shoRtLin-form").wijdialog("refresh");
+        $j("#shoRtLin-form").fadeOut('slow');
         return false;
       });
 	//form.wijtabs({width : 500});
