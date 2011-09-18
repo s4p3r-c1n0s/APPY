@@ -18,12 +18,16 @@ createDom : function() {
                   "<center>\
 		<form>\
 		<div id='shoRtLin-tabs'>\
-			<div style='margin-top:10px;'>\
+			<ul>
+				<li class='shoRtLin-slf'>shoRtLin-slf</li>
+				<li class='shoRtLin-odr'>shoRtLin-odr</li>
+			</ul>
+			<div class='shoRtLin-slf' style='margin-top:10px;'>\
 				<span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 				<input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 				<p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
 			</div>\
-			<div style='margin-top:10px;'>\
+			<div class='shoRtLin-odr' style='margin-top:10px;'>\
                 	        <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 	                        <input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 	                        <p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
