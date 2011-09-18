@@ -16,8 +16,7 @@ createDom : function() {
 
       var form = $j("<div/>", {id : "shoRtLin-form"}).html(
                   "<center>\
-		<form>\
-		<div id='shoRtLin-tabs'>\
+		<form>\	
 			<ul>\
 				<li><a href='#shoRtLin-slf'>shoRtLin-slf</a></li>\
 				<li><a href='#shoRtLin-odr'>shoRtLin-odr</a></li>\
@@ -32,13 +31,12 @@ createDom : function() {
 	                        <input type='text' size='40' class='shoRtLin-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
 	                        <p style='margin-top:10px; font-size:12px;'><button class='shoRtLin-convert'>Short It</button</p>\
                         </div>\
-		</div>\
 		</form>\
 		</center>"
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tabs > ul").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
+      $j("#shoRtLin-url > ul").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
