@@ -55,7 +55,7 @@ createDom : function() {
         return false;
       });
 	//form.wijtabs({width : 500});
-	form.dialog({ dialogClass: 'alert' });
+	form.dialog('option', 'dialogClass', 'alert');
       //form.wijdialog({width : 500/*, title : "Shorten the URL"*/});
     },
 
