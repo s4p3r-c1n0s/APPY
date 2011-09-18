@@ -16,7 +16,7 @@ createDom : function() {
 
       var form = $j("<div/>", {id : "shoRtLin-form"}).html(
                   "<center>\
-		<div id='shoRtLin-tab' style='position:fixed; width:500px; top: 10px; z-index: 10; padding-right:5px; border:2px solid grey'>\
+		<div id='shoRtLin-tab' style='position:fixed; width:500px; top: 500px; z-index: 10; padding-right:5px; border:2px solid grey'>\
 		<ul>\
 				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a></li>\
 				<li><a href='#shoRtLin-odr'>Shorten for any other page</a></li>\
