@@ -41,6 +41,7 @@ createDom : function() {
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
      // $j("#shoRtLin-form").wijtabs();
+     	$j("#shoRtLin-form").wijtabs();
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
@@ -56,7 +57,7 @@ createDom : function() {
         $j("#shoRtLin-form").wijdialog("refresh");
         return false;
       });
-	form.wijtabs({width : 500});
+	//form.wijtabs({width : 500});
 	//form.dialog('option', 'dialogClass', 'alert');
       //form.wijdialog({width : 500, title : "shoRtLin - The URL Shortener"});
     },
