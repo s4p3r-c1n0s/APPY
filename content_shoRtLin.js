@@ -43,7 +43,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tab").wijtabs({collapsible: true});
+      $j("#shoRtLin-tab").wijtabs({collapsible: true, closable: true};
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
