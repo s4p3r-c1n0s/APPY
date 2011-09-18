@@ -38,7 +38,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tab > ul").tabs();
+      $j("#shoRtLin-tab").wijtabs();
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
