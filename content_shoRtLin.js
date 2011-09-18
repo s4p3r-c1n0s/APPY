@@ -16,7 +16,7 @@ createDom : function() {
 
       var form = $j("<div/>", {id : "shoRtLin-form"}).html(
                   "<center>\
-		<div id='shoRtLin-tab' style='position: fixed; width: 750px; top: 100px; background-color: #f0ffff; z-index: 50; '>\
+		<div id='shoRtLin-tab' style='position: fixed; width: 750px; top: 100px; background-color: #f0ffff; z-index: 150;'>\
 		<ul>\
 				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a></li>\
 				<li><a href='#shoRtLin-odr'>Shorten for any other page</a></li>\
@@ -56,7 +56,7 @@ createDom : function() {
         $j("#shoRtLin-form").wijdialog("refresh");
         return false;
       });
-	form.wijtabs({width : 500,showOption: { blind: true, fade: true, duration: 200}});
+	form.wijtabs({width : 500});
 	//form.dialog('option', 'dialogClass', 'alert');
       //form.wijdialog({width : 500, title : "shoRtLin - The URL Shortener"});
     },
