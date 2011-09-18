@@ -18,8 +18,8 @@ createDom : function() {
                   "<center>\
 		<!--<div id='shoRtLin-tab'>-->\
 		<ul>\
-				<li><a href='#shoRtLin-slf'>shoRtLin-slf</a></li>\
-				<li><a href='#shoRtLin-odr'>shoRtLin-odr</a></li>\
+				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a></li>\
+				<li><a href='#shoRtLin-odr'>Shorten for any other page</a></li>\
 			</ul>\
 			<div id='shoRtLin-slf' style='margin-top:10px;'>\
 				<form>\
@@ -58,7 +58,7 @@ createDom : function() {
       });
 	//form.wijtabs({width : 500,showOption: { blind: true, fade: true, duration: 200}});
 	//form.dialog('option', 'dialogClass', 'alert');
-      form.wijdialog({width : 500, title : "Shorten the URL"});
+      form.wijdialog({width : 500, title : "shoRtLin - The URL Shortener"});
     },
 
 
