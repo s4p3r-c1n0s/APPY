@@ -21,8 +21,14 @@ createDom : function() {
 		</div>-->\
 		<div id='shoRtLin-tab' style='position:fixed; width:500px; left: 400px; top: 150px'>\
 			<ul>\
-				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a></li>\
-				<li><a href='#shoRtLin-odr'>Shorten for any other page</a></li>\
+				<li><a href='#shoRtLin-slf'>Shorten URL for current page</a>\
+					<span style='float: left;margin:0.4em 0.2em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
+					Remove Tab</span>\
+				</li>\
+				<li><a href='#shoRtLin-odr'>Shorten for any other page</a>\
+					<span style='float: left;margin:0.4em 0.2em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
+					Remove Tab</span>\
+				</li>\
 			</ul>\
 			<div id='shoRtLin-slf' style='margin-top:10px;'>\
 				<form>\
@@ -43,7 +49,7 @@ createDom : function() {
                 ).appendTo($j("body"));
 
       $j(".shoRtLin-url").val(config.api.getData("feedUrl") || "");
-      $j("#shoRtLin-tab").wijtabs({collapsible: true, closable: true};
+      $j("#shoRtLin-tab").wijtabs({collapsible: true,scrollabe: true});
       $j(".shoRtLin-convert").button({
         icons: {
           primary: "ui-icon-gear"
@@ -59,6 +65,11 @@ createDom : function() {
         $j("#shoRtLin-form").fadeOut(5000);
         return false;
       });
+	$j("#shoRtLin-tab span.ui-icon-close").live("click", function () {
+		var index = $j("li", form).index($j(this).parent());
+		form.wijtabs("remove", index);
+	});
+
 	//form.wijtabs({width : 500});
 	//form.dialog('option', 'dialogClass', 'alert');
       //form.wijdialog({width : 500, title : "shoRtLin - The URL Shortener"});
