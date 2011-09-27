@@ -1,0 +1,39 @@
+#!/bin/bash
+#SCRIPT TO FIND THE OCCURENCES OF A PHRASE IN GIVEN FILE OR DIRECTORY
+if [ $# -gt 2 ] || [ $# -lt 1 ]; then
+	echo "sh $0 <phrase> <Directory/file>"
+	exit
+fi
+if [ $# = 1 ];then 
+	hm=$(pwd)
+else
+	hm=$2
+	if [ ! -s "${hm}" ]; then
+		echo "$2 no such file/directory exists"
+		exit
+	fi
+fi
+#two files stored in home diretory for keeping the output
+fo=$HOME'/srch101'
+fl=$HOME'/srch202'
+rm -f $fl $fo
+touch $fl $fo
+#find -type f searches everything recursively so no need of further recursions
+find "$hm" -type f > $fo
+while read line
+	do
+	if [ "${line}" != "$fo" -a "${line}" != "$fl" ] 
+	# to prevent searching in the same file where output is stored
+		then
+		k=$(grep -nsai "$1" "${line}" | gawk -F':' '{print $1}')
+		# Searching the occurences in a file and their LINE NO 
+			if [ "$k" != "" ]
+				then
+				echo $k':'${line}':'`stat -c %Y "${line}"` >> $fl
+				# Saving each record
+				fi
+		fi
+	done  < $fo
+sort +2 -3 -r -t':' $fl | gawk -F':' '{print $2,$1}' > $fo
+# sorting according to mod tym
+cat $fo
