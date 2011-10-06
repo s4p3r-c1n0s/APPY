@@ -36,8 +36,8 @@
       	      <li><a href = '#shoRtLin-odr'>For other page</a></li>\
       	    </ul>\
       	    <div id = 'shoRtLin-slf' class = 'shoRtLin-link' style = 'overflow:hidden; margin:0px; width:450px'>\
-	            <form>\
-            		<span style = 'color:#A0A0A0; padding-right:5px;'>(Current Page URL)<br></span>\
+              <form>\
+                <span style = 'color:#A0A0A0; padding-right:5px;'>(Current Page URL)<br></span>\
       	        <span style = 'color:#000000; padding-right:5px; font-size:16px'>" + shoRtLin_display + "</span>\
       	        <input type = 'hidden' id = 'shoRtLin-slf-url' value = '" + shoRtLin_href + "'>\
       	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-slf-convert'>Short</button></p>\
@@ -46,7 +46,7 @@
       	    <div id = 'shoRtLin-odr' class = 'shoRtLin-link' style = 'overflow:hidden; margin:0px; width: 450px'>\
               <form>\
                 <span style = 'color:#A0A0A0; padding-right:5px'>(Include http://) </span>\
-	              <input type = 'text' size = '40' id = 'shoRtLin-odr-url' style = 'font-size:16px; padding:2px; border:1px solid grey;'>\
+                <input type = 'text' size = '40' id = 'shoRtLin-odr-url' style = 'font-size:16px; padding:2px; border:1px solid grey;'>\
       	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-odr-convert'>Short</button></p>\
 	            </form>\
             </div>\
@@ -102,13 +102,6 @@
         }
         return false;
       });
-		
-    		// remove div from DOM on closing all tabs
-    	$j("#shoRtLin-tab span.ui-icon-close").live("click", function () {
-    		var index = $j("li", form).index($j(this).parent());
-    		$shoRtLin.wijtabs("remove", index);
-    		if(--tab_count==0) {$j("#shoRtLin-form").remove();}
-    	});
 
     },  // createDom function ends
 
