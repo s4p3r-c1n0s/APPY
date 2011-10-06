@@ -41,14 +41,14 @@
       	        <span style = 'color:#000000; padding-right:5px; font-size:16px'>" + shoRtLin_display + "</span>\
       	        <input type = 'hidden' id = 'shoRtLin-slf-url' value = '" + shoRtLin_href + "'>\
       	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-slf-convert'>Short</button></p>\
-      	      </form>\
+              </form>\
       	    </div>\
       	    <div id = 'shoRtLin-odr' class = 'shoRtLin-link' style = 'overflow:hidden; margin:0px; width: 450px'>\
               <form>\
                 <span style = 'color:#A0A0A0; padding-right:5px'>(Include http://) </span>\
                 <input type = 'text' size = '40' id = 'shoRtLin-odr-url' style = 'font-size:16px; padding:2px; border:1px solid grey;'>\
       	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-odr-convert'>Short</button></p>\
-	            </form>\
+              </form>\
             </div>\
       	  </div>\
       	</center>\
@@ -71,7 +71,7 @@
           // create the tabs
       var $shoRtLin = $j("#shoRtLin-tab").wijtabs({alignment: 'left',scrollable: false});
 	
-      		//on clicking "Short" button of SELF tab 
+          //on clicking "Short" button of SELF tab 
       $j("#shoRtLin-slf-convert").button({
         icons: {
           primary: "ui-icon-link"
@@ -87,7 +87,7 @@
         return false;
       });
 
-      		// on clicking "Short" button of OTHER tab
+          // on clicking "Short" button of OTHER tab
       $j("#shoRtLin-odr-convert").button({
         icons: {
           primary: "ui-icon-link"
@@ -107,7 +107,7 @@
 
 
 
-    		// checks validity of the URL before conversion
+        // checks validity of the URL before conversion
     isValidUrl : function(url) {
       return ((url) && (url.length > 0) && ((url.indexOf("http://") != -1) || (url.indexOf("https://") != -1)))
     },
@@ -167,18 +167,16 @@
 
       }); // ajax ends
 
-  	},  // function shortURL ends
+    },  // function shortURL ends
 	
 
 
-	  	  //crete window on clicking social icon
-	  appClick : function(url) {
+        //crete window on clicking social icon
+    appClick : function(url) {
       window.open(url, "mywindow", "width=400, height=400");
     },
 
-
-
-  }; // shoRtLin Ends
+  }; // shoRtLin Ends HERE
 
   config.api.callbacks({
     init : shoRtLin.init,
