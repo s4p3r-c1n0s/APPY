@@ -13,28 +13,33 @@
 //Dom function creating  Dialog box 
 createDom : function() {
       $j("#shoRtLin-form").remove(); // cleanup any old invocation...
-      var tab_count = 2, shoRtLin_href = document.location.href;
+      var tab_count = 2, shoRtLin_href = document.location.href,shrt;
+      if(shoRtLin_href.length > 50)
+        shrt=shoRtLin_href.substring(0,47).concat("...");
+      else
+        shrt=shoRtLin_href;
       var form = $j("<div/>", {id : "shoRtLin-form"}).html("\
         <center>\
-	  <div id='shoRtLin-tab' style='position:fixed; width:650px; left: 400px; top: 150px'>\
+	  <div id='shoRtLin-tab' >\
 	    <ul>\
-	      <li><a href='#shoRtLin-slf'>Shorten URL for current page</a>\
-		<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
-		Remove Tab</span>\
+	      <li><a href='#shoRtLin-slf'>For current page</a>\
+		<!--<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
+		Remove Tab</span>-->\
 	      </li>\
-	      <li><a href='#shoRtLin-odr'>Shorten for any other page</a>\
-		<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
-		Remove Tab</span>\
+	      <li><a href='#shoRtLin-odr'>For other page</a>\
+		<!--<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
+		Remove Tab</span>-->\
 	       </li>\
 	    </ul>\
-	    <div id='shoRtLin-slf' class='shoRtLin-link' style='margin-top:1px;'>\
+	    <div id='shoRtLin-slf' class='shoRtLin-link' style='overflow: hidden; margin:0px; width: 450px'>\
 	      <form>\
-	        <span style='color:#A0A0A0; padding-right:5px; font-size:16px'>" + shoRtLin_href + "</span>\
+		<span style='color:#A0A0A0; padding-right:5px;'>(Current Page URL)<br></span>\
+	        <span style='color:#000000; padding-right:5px; font-size:16px'>" + shrt + "</span>\
 	        <input type='hidden' id='shoRtLin-slf-url' value='" + shoRtLin_href + "'>\
 	        <p style='margin-top:10px; font-size:12px;'><button id='shoRtLin-slf-convert'>Short</button></p>\
 	      </form>\
 	    </div>\
-	    <div id='shoRtLin-odr' class='shoRtLin-link' style='margin-top:1px;'>\
+	    <div id='shoRtLin-odr' class='shoRtLin-link' style='overflow: hidden ; margin:0px; width: 450px'>\
 	      <form>\
                 <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
 	        <input type='text' size='40' id='shoRtLin-odr-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
@@ -44,11 +49,20 @@ createDom : function() {
 	  </div>\
 	</center>\
         ").appendTo($j("body"));
-
+	$j('#shoRtLin-form').css('overflow','hidden');
       //$j(".shoRtLin-url").val(config.api.getData("longrUrl") || "");
       
       		//create tabs
-      var $shoRtLin = $j("#shoRtLin-tab").wijtabs({alignment: top,scrollabe: true, event : "mouseover"});
+      $j("#shoRtLin-form").wijdialog({width: 650,height:150,scrollable: false,modal: true, title : "Shortening the URL",
+	captionButtons: {
+                    pin: { visible: false },
+                    refresh: { visible: false },
+                    toggle: { visible: false },
+                    minimize: { visible: false },
+                    maximize: { visible: false }
+                }	
+                });
+      var $shoRtLin = $j("#shoRtLin-tab").wijtabs({alignment: 'left',scrollable: false});
 	
 		//on clicking SELF tab 
       $j("#shoRtLin-slf-convert").button({
@@ -136,7 +150,7 @@ createDom : function() {
             shoRtLin.appClick("http://www.linkedin.com/shareArticle?mini=true&url=" + shoRtLin_url);
           });
 		// delay and fade away the final dialog box
-	  $j("#shoRtLin-tab").delay(3000).fadeOut(5000);
+	  //$j("#shoRtLin-tab").delay(3000).fadeOut(5000);
 	},
 	});
 	    },
