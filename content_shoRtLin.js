@@ -115,7 +115,7 @@
 
     
         // uses bitly API (login ID and apiKey) 
-    shortURL : function shoRtLin_url(url) {
+    shortURL : function(url) {
 
       var id="umangjeet", apik="R_0aa77d04e6f747473c71020ed1c24237";
       var encoded_url=encodeURI(url);
@@ -140,7 +140,7 @@
             <div style='padding-top:10px; font-size:24px;'>\
               <b>" + shoRtLin_url + "</b>\
             </div>\
-            <div style='font-size:10px;'>i\
+            <div style='font-size:10px;'>\
               <a style='text-decoration:none;' href='" + shoRtLin_url + "' target='_blank'>" + shoRtLin_url + "</a>\
             </div>\
             <br>\
