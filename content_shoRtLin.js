@@ -6,65 +6,72 @@
       config.api.log("shoRtLin Loaded");
     },
 
+
+
     options : function() {
       config.api.log("shoRtLin Dialog Box");
       shoRtLin.createDom();
     },
-//Dom function creating  Dialog box 
-createDom : function() {
+
+
+
+        // Dom function creating  Dialog box and Tabs inside it
+    createDom : function() {
+
       $j("#shoRtLin-form").remove(); // cleanup any old invocation...
-      var tab_count = 2, shoRtLin_href = document.location.href,shrt;
+      var shoRtLin_href = document.location.href, shoRtLin_display;
+
+          // if length exceeds 50 display 47 URL characters followed by "..."
       if(shoRtLin_href.length > 50)
-        shrt=shoRtLin_href.substring(0,47).concat("...");
+        shoRtLin_display = shoRtLin_href.substring(0,46).concat("...");
       else
-        shrt=shoRtLin_href;
+        shoRtLin_display = shoRtLin_href;
+
+          // form appends the DOM body to 
       var form = $j("<div/>", {id : "shoRtLin-form"}).html("\
         <center>\
-	  <div id='shoRtLin-tab' >\
-	    <ul>\
-	      <li><a href='#shoRtLin-slf'>For current page</a>\
-		<!--<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
-		Remove Tab</span>-->\
-	      </li>\
-	      <li><a href='#shoRtLin-odr'>For other page</a>\
-		<!--<span style='float: left;margin:0.1em 0.1em 0 0;cursor: pointer;' class='ui-icon ui-icon-close'>\
-		Remove Tab</span>-->\
-	       </li>\
-	    </ul>\
-	    <div id='shoRtLin-slf' class='shoRtLin-link' style='overflow: hidden; margin:0px; width: 450px'>\
-	      <form>\
-		<span style='color:#A0A0A0; padding-right:5px;'>(Current Page URL)<br></span>\
-	        <span style='color:#000000; padding-right:5px; font-size:16px'>" + shrt + "</span>\
-	        <input type='hidden' id='shoRtLin-slf-url' value='" + shoRtLin_href + "'>\
-	        <p style='margin-top:10px; font-size:12px;'><button id='shoRtLin-slf-convert'>Short</button></p>\
-	      </form>\
-	    </div>\
-	    <div id='shoRtLin-odr' class='shoRtLin-link' style='overflow: hidden ; margin:0px; width: 450px'>\
-	      <form>\
-                <span style='color:#A0A0A0; padding-right:5px;'>(Include http://) </span>\
-	        <input type='text' size='40' id='shoRtLin-odr-url' style='font-size:16px; padding:2px; border:1px solid grey;'>\
-	        <p style='margin-top:10px; font-size:12px;'><button id='shoRtLin-odr-convert'>Short</button></p>\
-	      </form>\
+      	  <div id = 'shoRtLin-tab'>\
+      	    <ul>\
+      	      <li><a href = '#shoRtLin-slf'>For current page</a></li>\
+      	      <li><a href = '#shoRtLin-odr'>For other page</a></li>\
+      	    </ul>\
+      	    <div id = 'shoRtLin-slf' class = 'shoRtLin-link' style = 'overflow:hidden; margin:0px; width:450px'>\
+	            <form>\
+            		<span style = 'color:#A0A0A0; padding-right:5px;'>(Current Page URL)<br></span>\
+      	        <span style = 'color:#000000; padding-right:5px; font-size:16px'>" + shoRtLin_display + "</span>\
+      	        <input type = 'hidden' id = 'shoRtLin-slf-url' value = '" + shoRtLin_href + "'>\
+      	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-slf-convert'>Short</button></p>\
+      	      </form>\
+      	    </div>\
+      	    <div id = 'shoRtLin-odr' class = 'shoRtLin-link' style = 'overflow:hidden; margin:0px; width: 450px'>\
+              <form>\
+                <span style = 'color:#A0A0A0; padding-right:5px'>(Include http://) </span>\
+	              <input type = 'text' size = '40' id = 'shoRtLin-odr-url' style = 'font-size:16px; padding:2px; border:1px solid grey;'>\
+      	        <p style = 'margin-top:10px; font-size:12px;'><button id = 'shoRtLin-odr-convert'>Short</button></p>\
+	            </form>\
             </div>\
-	  </div>\
-	</center>\
-        ").appendTo($j("body"));
-	$j('#shoRtLin-form').css('overflow','hidden');
-      //$j(".shoRtLin-url").val(config.api.getData("longrUrl") || "");
-      
-      		//create tabs
-      $j("#shoRtLin-form").wijdialog({width: 650,height:150,scrollable: false,modal: true, title : "Shortening the URL",
-	captionButtons: {
+      	  </div>\
+      	</center>\
+      ").appendTo($j("body"));
+
+          // To prevent verical scrolling in the Dialog Box
+      $j('#shoRtLin-form').css('overflow','hidden');
+     
+      	  // create the dialog box
+      $j("#shoRtLin-form").wijdialog({width: 650, height: 150, scrollable: false, modal: true, title : "Shortening the URL",
+      	captionButtons: {
                     pin: { visible: false },
                     refresh: { visible: false },
                     toggle: { visible: false },
                     minimize: { visible: false },
                     maximize: { visible: false }
-                }	
-                });
+        }	
+      });
+
+          // create the tabs
       var $shoRtLin = $j("#shoRtLin-tab").wijtabs({alignment: 'left',scrollable: false});
 	
-		//on clicking SELF tab 
+      		//on clicking "Short" button of SELF tab 
       $j("#shoRtLin-slf-convert").button({
         icons: {
           primary: "ui-icon-link"
@@ -80,7 +87,7 @@ createDom : function() {
         return false;
       });
 
-		// on clicking OTHER tab
+      		// on clicking "Short" button of OTHER tab
       $j("#shoRtLin-odr-convert").button({
         icons: {
           primary: "ui-icon-link"
@@ -96,47 +103,60 @@ createDom : function() {
         return false;
       });
 		
-		// remove div from DOM on closing all tabs
-	$j("#shoRtLin-tab span.ui-icon-close").live("click", function () {
-		var index = $j("li", form).index($j(this).parent());
-		$shoRtLin.wijtabs("remove", index);
-		if(--tab_count==0) {$j("#shoRtLin-form").remove();}
-	});
-    },
+    		// remove div from DOM on closing all tabs
+    	$j("#shoRtLin-tab span.ui-icon-close").live("click", function () {
+    		var index = $j("li", form).index($j(this).parent());
+    		$shoRtLin.wijtabs("remove", index);
+    		if(--tab_count==0) {$j("#shoRtLin-form").remove();}
+    	});
+
+    },  // createDom function ends
+
+
 
     		// checks validity of the URL before conversion
-       isValidUrl : function(url) {
-       return ((url) && (url.length > 0) && ((url.indexOf("http://") != -1) || (url.indexOf("https://") != -1)))
-                   },
-    
-    
-                // uses bitly API (login ID and apiKey)
-                // replaces the Button with short URL
-       shortURL : function shoRtLin_url(url) {
-	var id="umangjeet", apik="R_0aa77d04e6f747473c71020ed1c24237", vurl=encodeURI(url);
-	$j.ajax({
-	url:"http://api.bit.ly/v3/shorten",
-	data:{longUrl:vurl,apiKey:apik,login:id},
-	dataType:"jsonp",
+    isValidUrl : function(url) {
+      return ((url) && (url.length > 0) && ((url.indexOf("http://") != -1) || (url.indexOf("https://") != -1)))
+    },
 
-	error : function(vd){
+
+    
+        // uses bitly API (login ID and apiKey) 
+    shortURL : function shoRtLin_url(url) {
+
+      var id="umangjeet", apik="R_0aa77d04e6f747473c71020ed1c24237";
+      var encoded_url=encodeURI(url);
+
+      $j.ajax({
+
+        url:"http://api.bit.ly/v3/shorten",
+        data:{longUrl:encoded_url,apiKey:apik,login:id},
+        dataType:"jsonp",
+
+        error : function(bitly_url) {
           $j('#shoRtLin-tab')
           .empty()
           .html("<div style='padding-top:10px; font-size:24px;'>There was an error. Please retry.</div>");
         },
 
-	success:function(vd)
-	{
-	var shoRtLin_url= vd.data.url;
-	config.api.log(shoRtLin_url);
-	$j('#shoRtLin-tab')
-          .empty()
-	  .html("<div style='padding-top:10px; font-size:24px;'>\
-                <b>" + shoRtLin_url + "</b></div><div style='font-size:10px;'><a style='text-decoration:none;' href='" + shoRtLin_url + "' target='_blank'>" + shoRtLin_url + "</a></div><br><div style='cursor:pointer;'>\
-                <img id='fbClick' src='http://cs.adomado.com/url_shortner/fb.png'/>\
-                <img id='twClick' src='http://cs.adomado.com/url_shortner/tw.png'/>\
-                <img id='liClick' src='http://cs.adomado.com/url_shortner/li.png'/>\
-                </div>");
+        success:function(bitly_url) {
+
+          var shoRtLin_url= bitly_url.data.url;
+
+          $j('#shoRtLin-tab').empty().html("\
+            <div style='padding-top:10px; font-size:24px;'>\
+              <b>" + shoRtLin_url + "</b>\
+            </div>\
+            <div style='font-size:10px;'>i\
+              <a style='text-decoration:none;' href='" + shoRtLin_url + "' target='_blank'>" + shoRtLin_url + "</a>\
+            </div>\
+            <br>\
+            <div style='cursor:pointer;'>\
+              <img id='fbClick' src='http://cs.adomado.com/url_shortner/fb.png'/>\
+              <img id='twClick' src='http://cs.adomado.com/url_shortner/tw.png'/>\
+              <img id='liClick' src='http://cs.adomado.com/url_shortner/li.png'/>\
+            </div>\
+          ");
 
           $j("#fbClick").click(function() {
             shoRtLin.appClick("http://www.facebook.com/sharer.php?u=" + shoRtLin_url);
@@ -149,20 +169,23 @@ createDom : function() {
           $j("#liClick").click(function() {
             shoRtLin.appClick("http://www.linkedin.com/shareArticle?mini=true&url=" + shoRtLin_url);
           });
-		// delay and fade away the final dialog box
-	  //$j("#shoRtLin-tab").delay(3000).fadeOut(5000);
-	},
-	});
-	    },
+
+        },  // success:function() ends
+
+      }); // ajax ends
+
+  	},  // function shortURL ends
 	
-		//crete window on clicking social icon
-	appClick : function(url){      window.open(url, "mywindow","width=400,height=400");    },
 
 
-    contextAction : function() {
-      config.api.log("Shorten the selected URL");
-}
-   }; // shoRtLin Ends
+	  	  //crete window on clicking social icon
+	  appClick : function(url) {
+      window.open(url, "mywindow", "width=400, height=400");
+    },
+
+
+
+  }; // shoRtLin Ends
 
   config.api.callbacks({
     init : shoRtLin.init,
