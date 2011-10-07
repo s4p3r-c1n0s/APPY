@@ -3,13 +3,11 @@
   var shoRtLin = { // Start
 
     init : function() {
-      config.api.log("shoRtLin Loaded");
     },
 
 
 
     options : function() {
-      config.api.log("shoRtLin Dialog Box");
       shoRtLin.createDom();
     },
 
@@ -180,8 +178,7 @@
 
   config.api.callbacks({
     init : shoRtLin.init,
-    options : shoRtLin.options,
-    contextAction : shoRtLin.contextAction
+    options : shoRtLin.options
   });
 
 })({
