@@ -1,13 +1,13 @@
 App data
 
 Code review
-- Indent, indent, indent! 2 spaces per tab. The code is unreadable for now...
-- Remove all debugging messages
-- The usage of tabs doesn't correct, I am unable to move the App window.
-- App window fades away automatically even before I can take an action on it.
-- contextAction should not be hooked if its not going to be used
+- Indent, indent, indent! 2 spaces per tab. The code is unreadable for now...   [DONE]
+- Remove all debugging messages                                                 [DONE]
+- The usage of tabs doesn't correct, I am unable to move the App window.        [DONE]
+- App window fades away automatically even before I can take an action on it.   [DONE]
+- contextAction should not be hooked if its not going to be used                [DONE]
 - Move all credentials, constants to top of codebase
 - Follow camelCase for all variable names and CapitalizedCamel case for all class names
 - Use some-dom-id case for naming any dom id's or classes
-- Use spaces after , (comma) or + (plus)
-- Use atleast 3 new lines before a new function definition
+- Use spaces after , (comma) or + (plus)                                        [DONE]
+- Use atleast 3 new lines before a new function definition                      [DONE]
